@@ -13,9 +13,11 @@ class Storage {
   }
 
   removeItem(item) {
-    if (this.#items.includes(item)) {
-      const itemIndex = this.#items.indexOf(item);
+    const itemIndex = this.#items.indexOf(item);
+    if (itemIndex !== -1) {
       this.#items.splice(itemIndex, 1);
+    } else {
+      console.log(`Item ${item} not found`);
     }
   }
 }
